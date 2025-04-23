@@ -11,30 +11,30 @@ const CarnetAdministrador = () => {
     const navigate = useNavigate();
 
     const menuItems = [
-      { 
-        id: 'aprendices',
-        title: "CARNET", 
-        subtitle: "APRENDICES",
-        component: <Aprendices />
-      },
-      { 
-        id: 'instructores',
-        title: "CARNET", 
-        subtitle: "INSTRUCTORES",
-        component: <Instructores />
-      },
-      { 
-        id: 'administrativos',
-        title: "CARNET", 
-        subtitle: "ADMINISTRATIVOS",
-        component: <Administrativos />
-      },
-      { 
-        id: 'soporte',
-        title: "SOPORTE", 
-        subtitle: "TECNICO",
-        content: "Contenido de soporte técnico del sistema"
-      }
+        { 
+          id: 'aprendices',
+          title: "CARNET", 
+          subtitle: "APRENDICES",
+          component: <Aprendices />
+        },
+        { 
+          id: 'instructores',
+          title: "CARNET", 
+          subtitle: "INSTRUCTORES",
+          component: <Instructores />
+        },
+        { 
+          id: 'administrativos',
+          title: "CARNET", 
+          subtitle: "ADMINISTRATIVOS",
+          component: <Administrativos />
+        },
+        { 
+          id: 'soporte',
+          title: "SOPORTE", 
+          subtitle: "TECNICO",
+          content: "Contenido de soporte técnico del sistema"
+        }
     ];
 
     const handleLogout = () => {
@@ -42,22 +42,22 @@ const CarnetAdministrador = () => {
     };
 
     const renderContent = () => {
-      if (activeItem === null) {
-          return (
-              <div className="welcome-message">
-                  <h2>Bienvenido al Panel de Administración</h2>
-                  <p>Seleccione una opción del menú para comenzar</p>
-              </div>
-        );
-      }
+        if (activeItem === null) {
+            return (
+                <div className="welcome-message">
+                    <h2>Bienvenido al Panel de Administración</h2>
+                    <p>Seleccione una opción del menú para comenzar</p>
+                </div>
+            );
+        }
       
       const selected = menuItems.find(item => item.id === activeItem);
-        return selected.component || (
-            <div className="content">
-                <h2>{selected.title} {selected.subtitle}</h2>
-                <p>{selected.content}</p>
-            </div>
-      );
+          return selected.component || (
+              <div className="content">
+                  <h2>{selected.title} {selected.subtitle}</h2>
+                  <p>{selected.content}</p>
+              </div>
+        );
     };
 
     return (
