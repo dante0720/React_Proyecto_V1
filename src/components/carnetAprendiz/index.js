@@ -22,20 +22,6 @@ const CarnetAprendiz = () => {
         }));
     };
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData(prev => ({
-                    ...prev,
-                    foto: reader.result
-                }));
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-
     const handleLogout = () => {
         navigate('/');
     };
@@ -56,12 +42,6 @@ const CarnetAprendiz = () => {
                                 ) : (
                                     <div className="photo-placeholder">Foto</div>
                                 )}
-                                <input 
-                                    type="file" 
-                                    accept="image/*" 
-                                    onChange={handleFileChange} 
-                                    className="photo-input"
-                                />
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -116,7 +96,8 @@ const CarnetAprendiz = () => {
                 <div className="text-center">
                     <button 
                         className="btn-Exit btn-primary exit-Aprendiz"
-                        onClick={handleLogout}>
+                        onClick={handleLogout}
+                        >
                         Cerrar
                     </button>
                 </div>

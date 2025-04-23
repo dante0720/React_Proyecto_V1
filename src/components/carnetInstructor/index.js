@@ -21,21 +21,6 @@ const CarnetInstructor = () => {
             [name]: value
         }));
     };
-
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setFormData(prev => ({
-                    ...prev,
-                    foto: reader.result
-                }));
-            };
-            reader.readAsDataURL(file);
-        }
-    };
-
     const handleLogout = () => {
         navigate('/'); 
     };
@@ -56,15 +41,8 @@ const CarnetInstructor = () => {
                                 ) : (
                                     <div className="photo-placeholder">Foto</div>
                                 )}
-                                <input 
-                                    type="file" 
-                                    accept="image/*" 
-                                    onChange={handleFileChange} 
-                                    className="photo-input"
-                                />
                             </div>
                         </div>
-
                         <div className="col-md-6">
                             <div className="form-group">
                                 <label>Rol: Instructor</label>
@@ -114,12 +92,11 @@ const CarnetInstructor = () => {
                         </div>
                     </div>
                 </div>
-                
-                {/* Added logout button */}
                 <div className="text-center mt-3">
                     <button 
                         onClick={handleLogout}
-                        className="btn-logout exit-Instructor">
+                        className="btn-logout exit-Instructor"
+                        >
                         Cerrar
                     </button>
                 </div>

@@ -11,7 +11,6 @@ const Instructor = () => {
         fechaNacimiento: '',
         foto: null
     });
-
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prev => ({
@@ -20,27 +19,13 @@ const Instructor = () => {
         }));
     };
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setFormData(prev => ({
-            ...prev,
-            foto: reader.result
-            }));
-        };
-        reader.readAsDataURL(file);
-        }
-    };
-
     return (
         <div className="carnet-container">
         <div className="carnet-card">
             <div className="carnet-header">
             <h2>Carnet Institucional</h2>
             </div>
-            
+
             <div className="carnet-body">
             <div className="row">
                 <div className="col-md-4">
@@ -50,12 +35,6 @@ const Instructor = () => {
                     ) : (
                     <div className="photo-placeholder">Foto</div>
                     )}
-                    <input 
-                    type="file" 
-                    accept="image/*" 
-                    onChange={handleFileChange} 
-                    className="photo-input"
-                    />
                 </div>
                 </div>
 
@@ -64,7 +43,7 @@ const Instructor = () => {
                 <label>Rol: Instructor </label>
                 </div>
                 </div>
-                
+
                 <div className="col-md-8">
                 <div className="form-group">
                     <label>Nombres:</label>
@@ -76,7 +55,7 @@ const Instructor = () => {
                     className="form-control"
                     />
                 </div>
-                
+
                 <div className="form-group">
                     <label>Apellidos:</label>
                     <input 
@@ -87,6 +66,7 @@ const Instructor = () => {
                     className="form-control"
                     />
                 </div>
+
                 <div className="row mt-3">
                 <div className="col-md-6">
                 <div className="form-group">
@@ -100,7 +80,7 @@ const Instructor = () => {
                     />
                 </div>
                 </div>
-            </div>
+                </div> 
                 
                 <div className="form-group">
                     <label>Código:</label>
@@ -108,7 +88,6 @@ const Instructor = () => {
                 </div>
             </div>
             </div>
-            
             <div className="carnet-footer">
             <p>SENA</p>
             </div>

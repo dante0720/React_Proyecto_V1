@@ -48,7 +48,6 @@ const Login = () => {
                                                 <button
                                                     className="btn btn-secondary dropdown-toggle w-100"
                                                     type="button"
-                                                    id="dropdownMenuButton"
                                                     data-bs-toggle="dropdown"
                                                     aria-expanded="false"
                                                 >

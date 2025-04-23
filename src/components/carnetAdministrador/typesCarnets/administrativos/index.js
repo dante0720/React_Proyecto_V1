@@ -20,20 +20,6 @@ const Administrativos = () => {
         }));
     };
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        if (file) {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-            setFormData(prev => ({
-            ...prev,
-            foto: reader.result
-            }));
-        };
-        reader.readAsDataURL(file);
-        }
-    };
-
     return (
         <div className="carnet-container">
         <div className="carnet-card">
@@ -50,12 +36,6 @@ const Administrativos = () => {
                     ) : (
                     <div className="photo-placeholder">Foto</div>
                     )}
-                    <input 
-                    type="file" 
-                    accept="image/*" 
-                    onChange={handleFileChange} 
-                    className="photo-input"
-                    />
                 </div>
                 </div>
 
@@ -87,6 +67,7 @@ const Administrativos = () => {
                     className="form-control"
                     />
                 </div>
+
                 <div className="row mt-3">
                 <div className="col-md-6">
                 <div className="form-group">
@@ -100,11 +81,12 @@ const Administrativos = () => {
                     />
                 </div>
                 </div>
-            </div>
+                </div>
                 
                 <div className="form-group">
                     <label>Código:</label>
                 </div>
+                
                 </div>
             </div>
             </div>
